@@ -5,54 +5,79 @@ function getComputerChoice(){
     return result;
 }
 
-function playRound(playerSelection, computerSelection)
+
+let playerScore = 0;
+let computerScore = 0;
+function playRound(playerSelection)
 {
-    let roundResult;
+    let computerSelection = getComputerChoice();
 
     if ((playerSelection == "Rock") && (computerSelection == "Paper"))
     {
-        console.log("Player got " + playerSelection);
-        console.log("Computer got " + computerSelection);
-        roundResult = "You Lose Paper beats Rock";
+        document.getElementById("player").innerHTML = "Player chose Rock";
+        document.getElementById("computer").innerHTML = "Computer chose Paper";
+        document.getElementById("result").innerHTML = "You Lose, Paper beats Rock";
+        computerScore += 1;
+        document.getElementById("score").innerHTML = playerScore + " - " + computerScore;
     }
     else if ((playerSelection == "Rock") && (computerSelection == "Scissors"))
     {
-        console.log("Player got " + playerSelection);
-        console.log("Computer got " + computerSelection);
-        roundResult = "You Win Rock beats Scissors";
+        document.getElementById("player").innerHTML = "Player chose Rock";
+        document.getElementById("computer").innerHTML = "Computer chose Scissors";
+        document.getElementById("result").innerHTML = "You Win, Rock beats Scissors";
+        playerScore += 1;
+        document.getElementById("score").innerHTML = playerScore + " - " + computerScore;
     }else if ((playerSelection == "Paper") && (computerSelection == "Rock"))
     {
-        console.log("Player got " + playerSelection);
-        console.log("Computer got " + computerSelection);
-        roundResult = "You Win Paper beats Rock";
+        document.getElementById("player").innerHTML = "Player chose Paper";
+        document.getElementById("computer").innerHTML = "Computer chose Rock";
+        document.getElementById("result").innerHTML = "You Win, Paper beats Rock";
+        playerScore += 1;
+        document.getElementById("score").innerHTML = playerScore + " - " + computerScore;
     }else if ((playerSelection == "Paper") && (computerSelection == "Scissors"))
     {
-        console.log("Player got " + playerSelection);
-        console.log("Computer got " + computerSelection);
-        roundResult = "You Lose Scissors beat Paper";
+        document.getElementById("player").innerHTML = "Player chose Paper";
+        document.getElementById("computer").innerHTML = "Computer chose Scissors";
+        document.getElementById("result").innerHTML = "You Lose, Scissors beat Paper";
+        computerScore += 1;
+        document.getElementById("score").innerHTML = playerScore + " - " + computerScore;
     }else if ((playerSelection == "Scissors") && (computerSelection == "Rock"))
     {
-        console.log("Player got " + playerSelection);
-        console.log("Computer got " + computerSelection);
-        roundResult = "You Lose Rock beats Scissors";
+        document.getElementById("player").innerHTML = "Player chose Scissors";
+        document.getElementById("computer").innerHTML = "Computer chose Rock";
+        document.getElementById("result").innerHTML = "You Lose, Rock beats Scissors";
+        computerScore += 1;
+        document.getElementById("score").innerHTML = playerScore + " - " + computerScore;
     }else if ((playerSelection == "Scissors") && (computerSelection == "Paper"))
     {
-        console.log("Player got " + playerSelection);
-        console.log("Computer got " + computerSelection);
-        roundResult = "You Win Scissors beat Paper";
+        document.getElementById("player").innerHTML = "Player chose Scissors";
+        document.getElementById("computer").innerHTML = "Computer chose Paper";
+        document.getElementById("result").innerHTML = "You Win, Scissors beats Rock";
+        playerScore += 1;
+        document.getElementById("score").innerHTML = playerScore + " - " + computerScore;
     }
     else{
-        console.log("Player got " + playerSelection);
-        console.log("Computer got " + computerSelection);
-        roundResult = "Its a draw both sides choose " + computerSelection;
+        document.getElementById("player").innerHTML = "Player chose " + playerSelection;
+        document.getElementById("computer").innerHTML = "Computer chose " + computerSelection;
+        document.getElementById("result").innerHTML = "It's a Draw, both sides chose " + playerSelection;
+        document.getElementById("score").innerHTML = playerScore + " - " + computerScore;
     }
-    console.log(roundResult);
-    return roundResult;
+
+    if((playerScore == 5) || (computerScore == 5)){
+        if(playerScore > computerScore){
+            document.getElementById("finalScore").innerHTML = "Player won! final score " + playerScore + "-" + computerScore;
+        }else{
+            document.getElementById("finalScore").innerHTML = "Computer won! final score " + playerScore + "-" + computerScore;
+        }
+        playerScore = 0;
+        computerScore = 0;
+    }
 }
 
-game();
 
 
+
+/*
 function game(){
     let playerScore = 0;
     let computerScore = 0;
@@ -82,3 +107,4 @@ function game(){
         }
      }
 }
+*/
