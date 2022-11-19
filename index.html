@@ -5,19 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style src="index.css"></style>
+    <link rel="stylesheet" href="index.css">
     <script src="myScript.js"></script> 
 </head>
 <body>
     
-    <button onclick="playRound('Rock')">Rock</button>
-    <button onclick="playRound('Paper')">Paper</button>
-    <button onclick="playRound('Scissors')">Scissors</button>
+    <p id="title">Choose an option to start the game!</p>
+    <div class="container">
+        <button onclick="playRound('Rock')"><img src="images/stone.png" alt="stone"></button>
+        <button onclick="playRound('Paper')"><img src="images/documents.png" alt="paper"></button>
+        <button onclick="playRound('Scissors')"><img src="images/scissors.png" alt="scissors"></button>
+    </div>
     
-    <div id="player"></div>
-    <div id="computer"></div>
+    <div class="resultContainer">
+        <div id="player"></div>
+        <div id="computer"></div>
+    </div>
+
     <div id="result"></div>
-    <div id="score"></div>
-    <div id="finalScore"></div>
+    
+    <div id="score">
+        <p id="scoreText">Score</p>
+    </div>
+
 </body>
 </html>
