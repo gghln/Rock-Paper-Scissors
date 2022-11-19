@@ -5,6 +5,8 @@ function getComputerChoice(){
     return result;
 }
 
+let rock = document.createElement("img");
+rock.src = "images/stone.png";
 
 let playerScore = 0;
 let computerScore = 0;
