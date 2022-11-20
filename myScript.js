@@ -63,17 +63,17 @@ function playRound(playerSelection)
     else{
         document.getElementById("player").innerHTML = "Player chose " + playerSelection;
         document.getElementById("computer").innerHTML = "Computer chose " + computerSelection;
-        document.getElementById("resultTextt").innerHTML = "It's a Draw, both sides chose " + playerSelection;
+        document.getElementById("resultText").innerHTML = "It's a Draw, both sides chose " + playerSelection;
         document.getElementById("scoreText").innerHTML = playerScore + " - " + computerScore;
     }
 
     if((playerScore == 5)||(computerScore == 5)){
         if(playerScore > computerScore){
-            document.getElementById("result").innerHTML = "Player won! final score " + playerScore + "-" + computerScore;
+            document.getElementById("resultText").innerHTML = "Player won! final score " + playerScore + "-" + computerScore;
             document.getElementById("player").style.display = "none";
             document.getElementById("computer").style.display = "none";
         }else{
-            document.getElementById("result").innerHTML = "Computer won! final score " + playerScore + "-" + computerScore;
+            document.getElementById("resultText").innerHTML = "Computer won! final score " + playerScore + "-" + computerScore;
             document.getElementById("computer").style.display = "none";
             document.getElementById("player").style.display = "none";
         }
